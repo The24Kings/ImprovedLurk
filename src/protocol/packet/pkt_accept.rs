@@ -1,9 +1,6 @@
 use crate::{
     debug_packet,
-    protocol::{
-        packet::{Packet, Parser},
-        pkt_type::PktType,
-    },
+    protocol::packet::{Packet, Parser, PktType},
 };
 use std::io::Write;
 

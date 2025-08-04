@@ -1,9 +1,9 @@
 use serde::{Deserialize, Serialize};
 use std::{env, fs::File};
 
-use crate::protocol::{ServerMessage, packet::pkt_message, pkt_type::PktType};
+use crate::protocol::{Protocol, packet::pkt_message};
 
-use super::packet::pkt_character;
+use super::packet::{PktType, pkt_character};
 
 #[derive(Debug)]
 pub struct Map {
@@ -90,7 +90,7 @@ impl Map {
 
             println!("[BROADCAST] Sending message to {}", player.name);
 
-            ServerMessage::Message(
+            Protocol::Message(
                 author.clone(),
                 pkt_message::Message {
                     message_type: PktType::Message,
@@ -136,7 +136,7 @@ impl Map {
         room.players
             .iter()
             .for_each(|&player_index| match self.players.get(player_index) {
-                Some(to_alert) => ServerMessage::Character(author.clone(), player.clone())
+                Some(to_alert) => Protocol::Character(author.clone(), player.clone())
                     .send()
                     .unwrap_or_else(|e| {
                         eprintln!("[ALERT] Failed to alert {}: {}", to_alert.name, e);

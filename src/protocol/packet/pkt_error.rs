@@ -2,8 +2,7 @@ use std::io::Write;
 
 use crate::debug_packet;
 use crate::protocol::error::ErrorCode;
-use crate::protocol::packet::{Packet, Parser};
-use crate::protocol::pkt_type::PktType;
+use crate::protocol::packet::{Packet, Parser, PktType};
 
 #[derive(Default, Debug, Clone)]
 pub struct Error {

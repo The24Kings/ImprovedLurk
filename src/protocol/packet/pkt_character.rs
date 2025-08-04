@@ -1,7 +1,6 @@
 use crate::debug_packet;
 use crate::protocol::Stream;
-use crate::protocol::packet::{Packet, Parser};
-use crate::protocol::pkt_type::PktType;
+use crate::protocol::packet::{Packet, Parser, PktType};
 use std::io::Write;
 
 #[derive(Debug, Clone)]

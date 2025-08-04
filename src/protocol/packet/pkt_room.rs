@@ -4,8 +4,7 @@ use crate::{
     debug_packet,
     protocol::{
         map,
-        packet::{Packet, Parser},
-        pkt_type::PktType,
+        packet::{Packet, Parser, PktType},
     },
 };
 

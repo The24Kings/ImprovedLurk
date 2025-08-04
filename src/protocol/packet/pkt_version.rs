@@ -1,9 +1,6 @@
 use crate::{
     debug_packet,
-    protocol::{
-        packet::{Packet, Parser},
-        pkt_type::PktType,
-    },
+    protocol::packet::{Packet, Parser, PktType},
 };
 
 #[derive(Default, Debug, Clone)]
@@ -12,7 +9,7 @@ pub struct Version {
     pub major_rev: u8,
     pub minor_rev: u8,
     pub extension_len: u16,
-    pub extensions: Option<Vec<u8>>, // 0-1 length, 2+ extention;
+    pub extensions: Option<Vec<u8>>, // 0-1 length, 2+ extension;
 }
 
 impl<'a> Parser<'a> for Version {
